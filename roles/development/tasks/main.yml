@@ -1,0 +1,43 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: install development tools
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+      # C/C++
+      - gdb
+      - cmake
+      - cmake-extras
+      - ninja
+      - clang
+      - clang-devel
+      - clang-tools-extra
+      - clang-analyzer
+      - lld
+      - llvm
+      - ctags
+      - gcc
+      - make
+      - automake
+      - autoconf
+      # Python
+      - uv
+      - python3-pip
+      - python3-pipenv
+      - python3-devel
+      # Lua
+      - lua
+      - luajit
+      - luarocks
+      # Java
+      - openjdk17
+      - openjdk21
+      # Rust
+      - rust
+      - rust-doc
+      - rust-std
+      - rustup
+      - cargo
+      # Node
+      - node
+      - npm

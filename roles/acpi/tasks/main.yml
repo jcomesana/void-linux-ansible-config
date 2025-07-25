@@ -1,0 +1,14 @@
+---
+- name: disable suspend to ram when lid close
+  replace:
+    path: /etc/acpi/handler.sh
+    after: 'logger "LID closed, suspending..."'
+    regexp: '^(.*\t)(zzz)'
+    replace: '\1#\2'
+
+- name: zzz for all users
+  lineinfile:
+    path: /etc/sudoers
+    regexp: 'zzz'
+    line: 'user ALL=(ALL) NOPASSWD: /bin/zzz'
+    state: present

@@ -1,0 +1,15 @@
+---
+- name: install bluez
+  community.general.xbps:
+    name:
+      - bluez
+      - libspa-bluetooth
+  notify: restart bluetoothd
+
+- name: configure bluez
+  copy:
+    content: |
+      [Policy]
+      AutoEnable=false
+    dest: /etc/bluetooth/main.conf
+  notify: restart bluetoothd

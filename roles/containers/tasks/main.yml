@@ -1,0 +1,51 @@
+---
+- name: install containers packages
+  community.general.xbps:
+    name: '{{item}}'
+  loop:
+      - docker # high level container runtime
+      - docker-compose # multi-container docker apps
+      # - podman # docker alternative without dockerd
+      # - kubectl # kubernetes api cli client
+      # - minikube # virtualized local kubernetes cluster
+      # - k9s # UI to interact with Kubernetes clusters
+      # - kubernetes-helm # kubernetes package manager
+      # - packer # golden images creator
+      # - terraform # infrastructure as code
+      # - k3s # Lightweight Kubernetes in a signle binary
+      # - stern # tail multiple pods on Kubernetes
+      # - podman-compose # mutli-container podman apps
+      #- kubectx         # switch clusters/namespaces
+      #- kustomize       # yaml templator
+      #- kompose-bin     # docker-compose to manifest convertor
+      #- kubespy         # observe Kubernetes resources in real time
+      # https://github.com/kubernetes-sigs/krew
+
+# - name: copy subuid files for podman rootless
+#   copy:
+#     dest: /etc/subuid
+#     content: "{{ user }}:100000:65536"
+#
+# - name: copy subgid files for podman rootless
+#   copy:
+#     dest: /etc/subgid
+#     content: "{{ user }}:100000:65536"
+#
+# - name: configure podman registries
+#   copy:
+#     src: registries.conf
+#     dest: /etc/containers/
+#
+# - name: configure podman storage
+#   copy:
+#     src: storage.conf
+#     dest: /etc/containers/
+#
+- name: Add user to docker group
+  user:
+    name: '{{ user }}'
+    groups: docker
+    append: yes
+  notify:
+    - enable dockerd
+    - disable dockerd at startup

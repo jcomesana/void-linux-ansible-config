@@ -1,0 +1,10 @@
+---
+- name: restart libvirt
+  community.general.runit:
+    name: '{{ item }}'
+    enabled: yes
+    state: restarted
+  loop:
+    - libvirtd
+    - virtlockd
+    - virtlogd

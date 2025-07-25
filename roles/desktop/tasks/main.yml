@@ -1,0 +1,10 @@
+---
+- name: include tasks
+  include_tasks:
+    file: '{{ item }}.yml'
+    apply:
+      tags: '{{ item }}'
+  tags: always
+  loop:
+    - desktop
+    - steam
