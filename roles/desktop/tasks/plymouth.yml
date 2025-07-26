@@ -1,7 +1,7 @@
 ---
-- name: install playmouth
+- name: install plymouth
   community.general.xbps:
-    name: '{{ item }}'
+    name: '{{ plymouth_item }}'
   loop:
     - plymouth
     - plymouth-data
@@ -30,4 +30,4 @@
   when: grub_cmdline_check.found == 0
 
 - name: configure plymouth
-  shell: plymouth-set-default-theme --reset spinner
+  shell: plymouth-set-default-theme -R bgrt

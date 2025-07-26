@@ -1,7 +1,7 @@
 ---
 - name: install containers packages
   community.general.xbps:
-    name: '{{item}}'
+    name: '{{ container_item }}'
   loop:
       - docker # high level container runtime
       - docker-compose # multi-container docker apps

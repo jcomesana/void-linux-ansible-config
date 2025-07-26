@@ -1,9 +1,9 @@
 ---
 - name: include tasks
   include_tasks:
-    file: '{{ item }}.yml'
+    file: '{{ desktop_task_item }}.yml'
     apply:
-      tags: '{{ item }}'
+      tags: '{{ desktop_task_item }}'
   tags: always
   loop:
     - desktop

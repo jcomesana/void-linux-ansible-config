@@ -13,7 +13,7 @@
 
 - name: Install flatpak packages
   community.general.flatpak:
-    name: '{{ item }}'
+    name: '{{ flathub_item }}'
     state: present
     remote: flathub
   loop:

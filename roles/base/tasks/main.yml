@@ -1,7 +1,7 @@
 ---
 - name: install packages
   community.general.xbps:
-    name: '{{item}}'
+    name: '{{base_item}}'
   loop:
     # Shell
     - fish-shell # powerful shell

@@ -1,13 +1,11 @@
 ---
 - name: install desktop packages
   community.general.xbps:
-    name: '{{ item }}'
+    name: '{{ desktop_item }}'
   loop:
     # DE
     - xorg-server-xwayland # xorg backend for wayland
     - wl-clipboard # clipboard manager
-    - xdg-desktop-portal-wlr # screen sharing for wayland
-    - xdg-desktop-portal-gtk # fallback portal
     - xdg-user-dirs
     - xdg-utils
     - kdesu

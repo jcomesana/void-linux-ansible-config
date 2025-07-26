@@ -1,7 +1,7 @@
 ---
 - name: restart libvirt
   community.general.runit:
-    name: '{{ item }}'
+    name: '{{ libvirt_item }}'
     enabled: yes
     state: restarted
   loop:

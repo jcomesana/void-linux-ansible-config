@@ -1,20 +1,20 @@
 ---
 - name: install virt packages
   community.general.xbps:
-    name: '{{item}}'
+    name: '{{virt_item}}'
   loop:
-      - qemu
-      - libvirt
-      - virt-manager
-      - virt-manager-tools
-      - dnsmasq
-      - vagrant
-      # For vagrant-libvirt
-      - libvirt-devel
-      - libguestfs
-      - libxslt-devel
-      - libxml2-devel
-      - pkg-config
+    - qemu
+    - libvirt
+    - virt-manager
+    - virt-manager-tools
+    - dnsmasq
+    - vagrant
+    # For vagrant-libvirt
+    - libvirt-devel
+    - libguestfs
+    - libxslt-devel
+    - libxml2-devel
+    - pkg-config
   notify: restart libvirt
 
 - name: add user to libvirt group

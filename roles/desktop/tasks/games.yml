@@ -1,10 +1,10 @@
 ---
 - name: install some games and gaming related utilities
   community.general.xbps:
-    name: '{{ item }}'
+    name: '{{ games_item }}'
   loop:
-      - nethack
-      - gzdoom
-      - bsd-games
-      - gamemode
-      - lutris
+    - nethack
+    - gzdoom
+    - bsd-games
+    - gamemode
+    - lutris
