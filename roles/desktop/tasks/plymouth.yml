@@ -26,7 +26,7 @@
   notify: update grub
 
 - name: configure grub
-  shell: grub-mkconfig
+  shell: update-grub
   when: grub_cmdline_check.found == 0
 
 - name: configure plymouth
