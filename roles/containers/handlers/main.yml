@@ -1,7 +1,7 @@
 ---
 - name: enable dockerd
   community.general.runit:
-    name: '{{ docker_item }}'
+    name: '{{ item }}'
     enabled: yes
     state: stopped
   loop:

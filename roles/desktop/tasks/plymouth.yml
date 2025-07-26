@@ -1,7 +1,7 @@
 ---
 - name: install plymouth
   community.general.xbps:
-    name: '{{ plymouth_item }}'
+    name: '{{ item }}'
   loop:
     - plymouth
     - plymouth-data

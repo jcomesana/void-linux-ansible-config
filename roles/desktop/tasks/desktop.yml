@@ -1,7 +1,7 @@
 ---
 - name: install desktop packages
   community.general.xbps:
-    name: '{{ desktop_item }}'
+    name: '{{ item }}'
   loop:
     # DE
     - xorg-server-xwayland # xorg backend for wayland

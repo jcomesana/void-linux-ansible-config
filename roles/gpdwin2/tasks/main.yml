@@ -2,7 +2,7 @@
 ---
 - name: install intel-undervolt
   community.general.xbps:
-    name: '{{ uv_item }}'
+    name: '{{ item }}'
   loop:
       - intel-undervolt
 

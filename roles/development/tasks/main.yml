@@ -2,7 +2,7 @@
 ---
 - name: install development tools
   community.general.xbps:
-    name: '{{ dev_item }}'
+    name: '{{ item }}'
   loop:
     # C/C++
     - gdb
