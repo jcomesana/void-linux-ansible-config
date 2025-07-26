@@ -80,3 +80,11 @@
     regexp: '{{ ansible_hostname }}'
     line: '127.0.0.1               {{ ansible_hostname }}'
     state: present
+
+- name: Do not ask for password with sudo
+  ansible.builtin.lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%ADMIN ALL='
+    line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
+    validate: /usr/sbin/visudo -cf %s

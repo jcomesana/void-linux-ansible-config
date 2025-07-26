@@ -26,6 +26,5 @@
     - { role: bluetooth, tags: bluetooth }
     # TODO
     # - { role: gpdwin2, tags: gpdwin2 }
-    # - { role: plymouth, tags: plymouth }
     # - firewall?
     # - sdkman ?
