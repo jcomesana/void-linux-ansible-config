@@ -3,71 +3,66 @@
   community.general.xbps:
     name: '{{item}}'
   loop:
-      # Shell
-      - fish-shell # powerful shell
-      - zsh
-      - bc # maths
-      - jq # json processor
-      - bat # colorized cat
-      - fzf # fuzzy finder
-      - ripgrep # search tool
-      - ripgrep-all
-      - fd # find tool
-      - the_silver_searcher # code searching tool
-      - neovim # future of vim
-      - python3-neovim
-      - neovide
-      - neovim-qt
-      - delta # git pager
-      - tree
-      - tmux # terminal multiplexer
-      - yazi
-      - lazigit # git tui
-      # System
-      - xtools # helpers for working with XBPS
-      - xmirror # easily select xbps mirror
-      - htop # system monitor
-      - btop # system monitor
-      - net-tools # netstat
-      - mtr # ping/traceroute diag tool
-      - fwupd # dell firmware updater
-      - nmap # port scanner
-      - tcpdump # packet analyzer
-      - whois # query registry
-      - vsv # list runit services
-      # Disk
-      - iotop # disk "top"
-      - ncdu # disk usage analyzer
-      - smartmontools # S.M.A.R.T Monitoring Tools
-      - gparted # partitionning tool
-      - mtools # gparted dep
-      # Network
-      - nethogs # net "top"
-      - openssh
-      - sshpass # allow ansible -k
-      - sshuttle # vpn through ssh
-      - keychain # ssh-agent wrapper
-      - wget # downloader
-      - curl # downloader
-      - bind-utils # dns tools
-      - openbsd-netcat # network utility
-      # Utils
-      - at # scheduler
-      - rsync # sync tool
-      - rclone # sync tool
-      - unzip # uncompress zip
-      - zstd
-      - 7zip
-      - gcal
-      - units
-      - cifs-utils
-      # - python3-pip # python3 package manager
-      # - python3-netaddr # ipmath for ansible
-      # - python3-devel
-      - dmidecode # dump dmi table content
-      - ipcalc # ipv4 network calculator
-      - pv # progress bar
-      - lzop # compression tool
+    # Shell
+    - fish-shell # powerful shell
+    - zsh
+    - bc # maths
+    - jq # json processor
+    - bat # colorized cat
+    - fzf # fuzzy finder
+    - ripgrep # search tool
+    - ripgrep-all
+    - fd # find tool
+    - the_silver_searcher # code searching tool
+    - neovim # future of vim
+    - python3-neovim
+    - neovide
+    - neovim-qt
+    - delta # git pager
+    - tree
+    - tmux # terminal multiplexer
+    - yazi
+    - lazigit # git tui
+    # System
+    - xtools # helpers for working with XBPS
+    - xmirror # easily select xbps mirror
+    - htop # system monitor
+    - btop # system monitor
+    - net-tools # netstat
+    - mtr # ping/traceroute diag tool
+    - fwupd # dell firmware updater
+    - nmap # port scanner
+    - tcpdump # packet analyzer
+    - whois # query registry
+    - vsv # list runit services
+    # Disk
+    - iotop # disk "top"
+    - ncdu # disk usage analyzer
+    - smartmontools # S.M.A.R.T Monitoring Tools
+    # Network
+    - nethogs # net "top"
+    - openssh
+    - sshpass # allow ansible -k
+    - sshuttle # vpn through ssh
+    - keychain # ssh-agent wrapper
+    - wget # downloader
+    - curl # downloader
+    - bind-utils # dns tools
+    - openbsd-netcat # network utility
+    # Utils
+    - at # scheduler
+    - rsync # sync tool
+    - rclone # sync tool
+    - unzip # uncompress zip
+    - zstd
+    - 7zip
+    - gcal
+    - units
+    - cifs-utils
+    - dmidecode # dump dmi table content
+    - ipcalc # ipv4 network calculator
+    - pv # progress bar
+    - lzop # compression tool
 
 - name: Configure root
   user:
