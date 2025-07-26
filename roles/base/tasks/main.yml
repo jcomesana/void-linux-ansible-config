@@ -22,7 +22,7 @@
     - tree
     - tmux # terminal multiplexer
     - yazi
-    - lazigit # git tui
+    - lazygit # git tui
     # System
     - xtools # helpers for working with XBPS
     - xmirror # easily select xbps mirror

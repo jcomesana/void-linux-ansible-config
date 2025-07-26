@@ -7,11 +7,12 @@
     apply_gpdwin2_config: false
 
   pre_tasks:
-    - name: Enable multilib
+    - name: Enable multilib and nonfree
       community.general.xbps:
         name:
           - void-repo-multilib
           - void-repo-multilib-nonfree
+          - void-repo-nonfree
 
   roles:
     - { role: base, tags: base }

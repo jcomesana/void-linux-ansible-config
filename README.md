@@ -7,7 +7,7 @@ ansible-galaxy collection install community.general
 ```
 3. Then run
 ```
-ansible-playbook install.yml -K
+ansible-playbook install.yml -K --extra-vars 'user=<your user>'
 ```
 4. Remove Ansible xbps package
 
