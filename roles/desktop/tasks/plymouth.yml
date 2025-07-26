@@ -1,0 +1,29 @@
+---
+- name: install playmouth
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+    - plymouth
+    - plymouth-data
+
+- name: check if splash quiet is configured in the boot command
+  lineinfile:
+    backup: true
+    path: /etc/default/grub
+    regexp: '^GRUB_CMDLINE_LINUX=".*splash quiet'
+    state: absent
+  check_mode: true
+  register: grub_cmdline_check
+  changed_when: false
+
+- name: insert splash if missing
+  lineinfile:
+    backrefs: true
+    path: /etc/default/grub
+    regexp: "^(GRUB_CMDLINE_LINUX=\".*)\"$"
+    line: '\1 splash quiet"'
+  when: grub_cmdline_check.found == 0
+  notify: update grub
+
+- name: configure plymouth
+  shell: plymouth-set-default-theme --reset spinner
