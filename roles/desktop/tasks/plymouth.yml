@@ -6,7 +6,7 @@
     - plymouth
     - plymouth-data
 
-- name: check if splash quiet is configured in the boot command
+- name: check if it is required to upgdate grub
   lineinfile:
     backup: true
     path: /etc/default/grub
@@ -16,7 +16,7 @@
   register: grub_cmdline_check
   changed_when: false
 
-- name: insert splash if missing
+- name: update grub config file
   lineinfile:
     backrefs: true
     path: /etc/default/grub
@@ -24,6 +24,10 @@
     line: '\1 splash quiet"'
   when: grub_cmdline_check.found == 0
   notify: update grub
+
+- name: configure grub
+  shell: grub-mkconfig
+  when: grub_cmdline_check.found == 0
 
 - name: configure plymouth
   shell: plymouth-set-default-theme --reset spinner
