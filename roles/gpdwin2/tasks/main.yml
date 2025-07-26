@@ -1,0 +1,34 @@
+#SPDX-License-Identifier: MIT-0
+---
+- name: install intel-undervolt
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+      - intel-undervolt
+
+- name: check if it is required to upgdate grub for GPD Win 2
+  lineinfile:
+    backup: true
+    path: /etc/default/grub
+    regexp: '^GRUB_CMDLINE_LINUX=".*fbcon=rotate'
+    state: absent
+  check_mode: true
+  register: grub_cmdline_gpdwin2_check
+  changed_when: false
+
+- name: update grub config file for GPD Win 2 P1
+  lineinfile:
+    backrefs: true
+    path: /etc/default/grub
+    regexp: "^(GRUB_CMDLINE_LINUX=\".*)\"$"
+    line: '\1 fbcon=rotate:1 video=eDP-1:panel_orientation=right_side_up"'
+  when: grub_cmdline_gpdwin2_check.found == 0
+  notify: update grub gpd win 2
+
+- name: update grub config file for GPD Win 2 P2
+  shell: echo 'GRUB_GFXMODE=720x1280x32' >> /etc/default/grub
+  when: grub_cmdline_gpdwin2_check.found == 0
+  notify: update grub gpd win 2
+
+- name: configure grub
+  shell: update-grub

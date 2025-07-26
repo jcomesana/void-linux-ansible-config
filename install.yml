@@ -4,6 +4,7 @@
   vars:
     user: user
     shell: /usr/bin/zsh
+    apply_gpdwin2_config: false
 
   pre_tasks:
     - name: Enable multilib
@@ -24,7 +25,6 @@
     # - { role: zram, tags: zram }
     - { role: acpi, tags: acpi }
     - { role: bluetooth, tags: bluetooth }
-    # TODO
-    # - { role: gpdwin2, tags: gpdwin2 }
+    - { role: gpdwin2, tags: gpdwin2, when: apply_gpdwin2_config }
     # - firewall?
     # - sdkman ?
