@@ -10,7 +10,7 @@
   lineinfile:
     backup: true
     path: /etc/default/grub
-    regexp: '^GRUB_CMDLINE_LINUX=".*splash quiet'
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT=".*splash quiet'
     state: absent
   check_mode: true
   register: grub_cmdline_check
@@ -20,10 +20,9 @@
   lineinfile:
     backrefs: true
     path: /etc/default/grub
-    regexp: "^(GRUB_CMDLINE_LINUX=\".*)\"$"
+    regexp: "^(GRUB_CMDLINE_LINUX_DEFAULT=\".*)\"$"
     line: '\1 splash quiet"'
   when: grub_cmdline_check.found == 0
-  notify: update grub
 
 - name: configure grub
   shell: update-grub
