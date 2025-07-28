@@ -31,6 +31,7 @@
     - net-tools # netstat
     - mtr # ping/traceroute diag tool
     - fwupd # dell firmware updater
+    - irqbalance
     - nmap # port scanner
     - tcpdump # packet analyzer
     - whois # query registry
