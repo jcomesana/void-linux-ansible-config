@@ -47,7 +47,6 @@
     - sshuttle # vpn through ssh
     - keychain # ssh-agent wrapper
     - wget # downloader
-    - curl # downloader
     - bind-utils # dns tools
     - openbsd-netcat # network utility
     # Utils
@@ -60,7 +59,6 @@
     - gcal
     - units
     - cifs-utils
-    - dmidecode # dump dmi table content
     - ipcalc # ipv4 network calculator
     - pv # progress bar
     - lzop # compression tool
