@@ -10,7 +10,6 @@
     - cmake-extras
     - ninja
     - clang
-    - clang19-devel
     - clang-tools-extra
     - clang-analyzer
     - lld
@@ -28,7 +27,7 @@
     - python3-devel
     # Lua
     - lua
-    - LuaJit
+    - LuaJIT
     - luarocks
     # Java
     - openjdk17
