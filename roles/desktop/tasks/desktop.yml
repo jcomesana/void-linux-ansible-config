@@ -11,7 +11,6 @@
     - kdegraphics-thumbnailers
     - ffmpegthumbs
     - power-profiles-daemon
-    - nerd-fonts-ttf
     - noto-fonts-ttf # unicode font
     - noto-fonts-emoji # emojis
     - dejavu-fonts-ttf # fonts

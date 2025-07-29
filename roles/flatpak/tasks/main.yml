@@ -25,4 +25,5 @@
     - org.dupot.easyflatpak
     - com.github.tchx84.Flatseal
     - org.fedoraproject.MediaWriter
+    - io.github.getnf.embellish
 #    - org.gnome.Boxes
