@@ -80,12 +80,12 @@
     line: '127.0.0.1               {{ ansible_hostname }}'
     state: present
 
-- name: Do not ask for password with sudo
+- name: do not ask for password with sudo for wheel members
   ansible.builtin.lineinfile:
     path: /etc/sudoers
     state: present
-    regexp: '^%ADMIN ALL='
-    line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
+    regexp: '^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL'
+    line: '%wheel ALL=(ALL:ALL) NOPASSWD: ALL'
     validate: /usr/sbin/visudo -cf %s
 
 - name: restart irqbalance
