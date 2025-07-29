@@ -4,7 +4,6 @@
     name: '{{ item }}'
   loop:
     # DE
-    - xorg-server-xwayland # xorg backend for wayland
     - wl-clipboard # clipboard manager
     - xdg-user-dirs
     - xdg-utils
@@ -37,3 +36,9 @@
     - strawberry # audio player
     - milkytracker # fast tracker clone
     - keepassxc # password manager
+
+- name: restart power-profiles-daemon
+  community.general.runit:
+    name: power-profiles-daemon
+    enabled: yes
+    state: restarted

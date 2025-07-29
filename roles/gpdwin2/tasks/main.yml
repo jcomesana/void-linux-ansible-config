@@ -10,7 +10,7 @@
   lineinfile:
     backup: true
     path: /etc/default/grub
-    regexp: '^GRUB_CMDLINE_LINUX=".*fbcon=rotate'
+    regexp: '^GRUB_CMDLINE_LINUX_DEFAULT=".*fbcon=rotate'
     state: absent
   check_mode: true
   register: grub_cmdline_gpdwin2_check
@@ -20,15 +20,14 @@
   lineinfile:
     backrefs: true
     path: /etc/default/grub
-    regexp: "^(GRUB_CMDLINE_LINUX=\".*)\"$"
+    regexp: "^(GRUB_CMDLINE_LINUX_DEFAULT=\".*)\"$"
     line: '\1 fbcon=rotate:1 video=eDP-1:panel_orientation=right_side_up"'
   when: grub_cmdline_gpdwin2_check.found == 0
-  notify: update grub gpd win 2
 
 - name: update grub config file for GPD Win 2 P2
   shell: echo 'GRUB_GFXMODE=720x1280x32' >> /etc/default/grub
   when: grub_cmdline_gpdwin2_check.found == 0
-  notify: update grub gpd win 2
 
 - name: configure grub
   shell: update-grub
+  when: grub_cmdline_gpdwin2_check.found == 0

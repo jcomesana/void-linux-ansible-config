@@ -87,3 +87,9 @@
     regexp: '^%ADMIN ALL='
     line: '%ADMIN ALL=(ALL) NOPASSWD: ALL'
     validate: /usr/sbin/visudo -cf %s
+
+- name: restart irqbalance
+  community.general.runit:
+    name: irqbalance
+    enabled: yes
+    state: restarted
