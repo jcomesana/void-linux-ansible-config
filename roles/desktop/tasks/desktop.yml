@@ -2,6 +2,7 @@
 - name: install desktop packages
   community.general.xbps:
     name: '{{ item }}'
+    update_cache: false
   loop:
     # DE
     - wl-clipboard # clipboard manager
@@ -35,6 +36,7 @@
     - strawberry # audio player
     - milkytracker # fast tracker clone
     - keepassxc # password manager
+    - plasma-firewall # ufw gui
 
 - name: restart power-profiles-daemon
   community.general.runit:

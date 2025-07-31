@@ -49,6 +49,7 @@
     - wget # downloader
     - bind-utils # dns tools
     - openbsd-netcat # network utility
+    - ufw
     # Utils
     - at # scheduler
     - rsync # sync tool
