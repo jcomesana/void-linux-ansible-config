@@ -6,8 +6,6 @@
   loop:
     # DE
     - wl-clipboard # clipboard manager
-    - xdg-user-dirs
-    - xdg-utils
     - kdesu
     - kdegraphics-thumbnailers
     - ffmpegthumbs

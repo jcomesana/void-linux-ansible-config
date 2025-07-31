@@ -2,6 +2,7 @@
 - name: install steam packages
   community.general.xbps:
     name: '{{ item }}'
+    update_cache: false
   loop:
     - steam # games manager
     - xrandr # some games requires it

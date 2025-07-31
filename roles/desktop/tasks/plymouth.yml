@@ -2,6 +2,7 @@
 - name: install plymouth
   community.general.xbps:
     name: '{{ item }}'
+    update_cache: false
   loop:
     - plymouth
 

@@ -3,6 +3,7 @@
 - name: install development tools
   community.general.xbps:
     name: '{{ item }}'
+    update_cache: false
   loop:
     # C/C++
     - gdb
@@ -35,7 +36,6 @@
     # Rust
     - rust
     - rust-doc
-    - rust-std
     - rustup
     - cargo
     # Node
