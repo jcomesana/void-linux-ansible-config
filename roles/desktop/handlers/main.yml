@@ -1,0 +1,5 @@
+- name: restart power-profiles-daemon
+  community.general.runit:
+    name: power-profiles-daemon
+    enabled: yes
+    state: restarted

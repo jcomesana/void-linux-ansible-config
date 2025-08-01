@@ -1,7 +1,19 @@
 ---
+- name: install ufw
+  community.general.xbps:
+    name: ufw
+    update_cache: true
+  notify: restart ufw
+
+- name: install irqbalance
+  community.general.xbps:
+    name: irqbalance
+  notify: restart irqbalance
+
 - name: install packages
   community.general.xbps:
     name: '{{item}}'
+    update_cache: false
   loop:
     # Shell
     - fish-shell # powerful shell
@@ -88,15 +100,3 @@
     regexp: '^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL'
     line: '%wheel ALL=(ALL:ALL) NOPASSWD: ALL'
     validate: /usr/sbin/visudo -cf %s
-
-- name: restart irqbalance
-  community.general.runit:
-    name: irqbalance
-    enabled: yes
-    state: restarted
-
-- name: restart ufw
-  community.general.runit:
-    name: ufw
-    enabled: yes
-    state: restarted

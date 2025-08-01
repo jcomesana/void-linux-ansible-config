@@ -9,13 +9,14 @@
     - kdesu
     - kdegraphics-thumbnailers
     - ffmpegthumbs
-    - power-profiles-daemon
     - noto-fonts-ttf # unicode font
     - noto-fonts-emoji # emojis
     - dejavu-fonts-ttf # fonts
     - font-awesome5 # Icon font
     - font-awesome6 # Icon font
     - onedrive
+    - plasma-workspace-wallpapers
+    - dolphin-plugins
     # Video
     - mesa # DRI 3D acceleration
     - mesa-dri # DRI 3D acceleration
@@ -36,8 +37,8 @@
     - keepassxc # password manager
     - plasma-firewall # ufw gui
 
-- name: restart power-profiles-daemon
-  community.general.runit:
+- name: install power-profiles-daemon
+  community.general.xbps:
     name: power-profiles-daemon
-    enabled: yes
-    state: restarted
+    update_cache: false
+  notify: restart power-profiles-daemon

@@ -1,0 +1,12 @@
+---
+- name: restart ufw
+  community.general.runit:
+    name: ufw
+    enabled: yes
+    state: restarted
+
+- name: restart irqbalance
+  community.general.runit:
+    name: irqbalance
+    enabled: yes
+    state: restarted
