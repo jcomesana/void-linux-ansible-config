@@ -8,7 +8,7 @@
   become: true
   become_user: '{{ user }}'
   copy:
-    force: no
+    force: yes
     dest: '/home/{{ user }}/.zimrc'
     content: |
       #
