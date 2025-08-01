@@ -15,7 +15,6 @@
     - font-awesome5 # Icon font
     - font-awesome6 # Icon font
     - onedrive
-    - plasma-workspace-wallpapers
     - dolphin-plugins
     # Video
     - mesa # DRI 3D acceleration
@@ -42,3 +41,9 @@
     name: power-profiles-daemon
     update_cache: false
   notify: restart power-profiles-daemon
+
+- name: install onedrive gui
+  get_url:
+    url: https://github.com/bpozdena/OneDriveGUI/releases/download/v1.2.1/OneDriveGUI-1.2.1-x86_64.AppImage
+    dest: '/home/{{ user }}/Downloads'
+    mode: 0755
