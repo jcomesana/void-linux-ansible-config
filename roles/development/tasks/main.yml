@@ -40,3 +40,13 @@
     - cargo
     # Node
     - nodejs
+
+- name: install sdkman
+  become: true
+  become_user: '{{ user }}'
+  shell: 'curl -s "https://get.sdkman.io" | bash'
+
+- name: install groovy with sdkman
+  become: true
+  become_user: '{{ user }}'
+  shell: 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install groovyserv && sdk install groovy'
