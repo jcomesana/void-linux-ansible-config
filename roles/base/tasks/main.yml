@@ -3,7 +3,12 @@
   community.general.xbps:
     name: ufw
     update_cache: true
-  notify: restart ufw
+
+- name: restart ufw
+  community.general.runit:
+    name: ufw
+    enabled: yes
+    state: restarted
 
 - name: install irqbalance
   community.general.xbps:
