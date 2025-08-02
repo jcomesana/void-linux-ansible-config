@@ -3,12 +3,7 @@
   community.general.xbps:
     name: ufw
     update_cache: true
-
-- name: restart ufw
-  community.general.runit:
-    name: ufw
-    enabled: yes
-    state: restarted
+  notify: restart ufw
 
 - name: install irqbalance
   community.general.xbps:
@@ -66,14 +61,15 @@
     - wget # downloader
     - bind-utils # dns tools
     - openbsd-netcat # network utility
-    - ufw
     # Utils
     - at # scheduler
     - rsync # sync tool
     - rclone # sync tool
+    - zip
     - unzip # uncompress zip
     - zstd
     - 7zip
+    - bzip2
     - gcal
     - units
     - cifs-utils
