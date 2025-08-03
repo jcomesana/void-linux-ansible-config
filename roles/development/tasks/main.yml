@@ -9,6 +9,7 @@
     - gdb
     - cmake
     - cmake-extras
+    - meson
     - ninja
     - clang
     - clang-tools-extra
@@ -18,9 +19,7 @@
     - ctags
     - gcc
     - libstdc++-devel
-    - make
     - automake
-    - autoconf
     # Python
     - uv
     - python3-pip
@@ -28,7 +27,6 @@
     - python3-devel
     # Lua
     - lua
-    - LuaJIT
     - luarocks
     # Java
     - openjdk17
