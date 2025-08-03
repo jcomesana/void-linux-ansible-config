@@ -15,7 +15,6 @@
     - font-awesome5 # Icon font
     - font-awesome6 # Icon font
     - onedrive
-    - dolphin-plugins
     # Video
     - mesa # DRI 3D acceleration
     - mesa-dri # DRI 3D acceleration
