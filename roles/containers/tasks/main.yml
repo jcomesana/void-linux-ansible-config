@@ -4,7 +4,7 @@
     name: '{{ item }}'
   loop:
       - docker # high level container runtime
-      - docker-compose # multi-container docker apps
+      # - docker-compose # multi-container docker apps
       # - podman # docker alternative without dockerd
       # - kubectl # kubernetes api cli client
       # - minikube # virtualized local kubernetes cluster
