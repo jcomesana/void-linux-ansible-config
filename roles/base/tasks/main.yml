@@ -31,6 +31,7 @@
     - neovide
     - neovim-qt
     - delta # git pager
+    - tree-sitter-devel
     - tree
     - tmux # terminal multiplexer
     - yazi
