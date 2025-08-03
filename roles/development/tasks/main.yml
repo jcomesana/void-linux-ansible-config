@@ -49,4 +49,4 @@
 - name: install groovy with sdkman
   become: true
   become_user: '{{ user }}'
-  shell: 'source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install groovyserv && sdk install groovy'
+  shell: 'bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install groovyserv && sdk install groovy"'
