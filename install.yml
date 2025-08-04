@@ -31,9 +31,7 @@
     - { role: power, tags: power }
     - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }
-    # - { role: zram, tags: zram }
+    - { role: zram, tags: zram }
     - { role: acpi, tags: acpi }
     - { role: bluetooth, tags: bluetooth }
     - { role: gpdwin2, tags: gpdwin2, when: apply_gpdwin2_config }
-    # - firewall?
-    # - sdkman ?
