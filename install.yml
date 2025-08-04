@@ -7,6 +7,14 @@
     apply_gpdwin2_config: false
 
   pre_tasks:
+    - name: Upgrade xbps
+      community.general.xbps:
+          upgrade_xbps: true
+
+    - name: Upgrade system
+      community.general.xbps:
+          upgrade: true
+
     - name: Enable multilib and nonfree
       community.general.xbps:
         name:
