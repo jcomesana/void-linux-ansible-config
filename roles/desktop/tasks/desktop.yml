@@ -20,7 +20,16 @@
     - mesa-dri # DRI 3D acceleration
     - mesa-demos # glxgears command
     - intel-media-driver # intel driver iHD
+    - intel-video-accel
+    - intel-gpu-tools
     - libva-utils # hardware video acceleration
+    - mesa-vaapi
+    - gstreamer-vaapi
+    - gst-plugins-base1
+    - gst-plugins-bad1
+    - gst-plugins-good1
+    - gst-plugins-ugly1
+    - gst-plugins-rs1
     # Graphical apps
     - mpv # video player
     - vlc # video player
