@@ -4,9 +4,12 @@
     name: flatpak
 
 - name: Add the flathub flatpak repo
+  become: true
+  become_user: '{{ user }}'
   community.general.flatpak_remote:
     name: "{{ item.name }}"
     state: present
+    method: user
     flatpakrepo_url: "{{ item.repo }}"
   loop:
     - { name: 'flathub', repo: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }
