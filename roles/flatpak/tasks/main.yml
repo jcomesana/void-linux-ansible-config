@@ -12,10 +12,13 @@
     - { name: 'flathub', repo: 'https://dl.flathub.org/repo/flathub.flatpakrepo' }
 
 - name: Install flatpak packages
+  become: true
+  become_user: '{{ user }}'
   community.general.flatpak:
     name: '{{ item }}'
     state: present
     remote: flathub
+    method: user
   loop:
     - rocks.koreader.KOReader
     - io.github.flattool.Warehouse
