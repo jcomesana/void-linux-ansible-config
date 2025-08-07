@@ -48,3 +48,18 @@
   become: true
   become_user: '{{ user }}'
   shell: 'bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && sdk install groovyserv && sdk install groovy"'
+
+- name: configure GROOVY_HOME in fish
+  become: true
+  become_user: '{{ user }}'
+  shell: >
+    fish -c "set -U GROOVY_HOME /home/{{ user }}/.sdkman/candidates/groovy/current"
+
+- name: configure GROOVY_HOME in zsh
+  become: true
+  become_user: '{{ user }}'
+  ansible.builtin.blockinfile:
+    path: ~/.zshrc
+    marker: "### GROOVY_HOME ###"
+    insert_before: "#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!"
+    block: "export GROOVY_HOME=/home/{{ user }}/.sdkman/candidates/groovy/current"
