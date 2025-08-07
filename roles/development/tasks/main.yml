@@ -20,6 +20,8 @@
     - gcc
     - libstdc++-devel
     - automake
+    - heaptrack
+    - hotspot
     # Python
     - uv
     - python3-pip

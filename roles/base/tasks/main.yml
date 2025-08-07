@@ -78,6 +78,7 @@
     - ipcalc # ipv4 network calculator
     - pv # progress bar
     - lzop # compression tool
+    - hyperfine # like time
 
 - name: Configure root
   user:
