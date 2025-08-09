@@ -8,7 +8,12 @@
 - name: install irqbalance
   community.general.xbps:
     name: irqbalance
-  notify: restart irqbalance
+
+- name: restart irqbalance
+  community.general.runit:
+    name: irqbalance
+    enabled: yes
+    state: restarted
 
 - name: install packages
   community.general.xbps:
