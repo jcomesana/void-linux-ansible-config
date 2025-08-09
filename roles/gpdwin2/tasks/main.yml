@@ -2,9 +2,25 @@
 ---
 - name: install intel-undervolt
   community.general.xbps:
-    name: '{{ item }}'
-  loop:
-      - intel-undervolt
+    name: intel-undervolt
+
+- name: configure intel-undervolt CPU
+  lineinfile:
+    path: /etc/intel-undervolt.conf
+    line: "undervolt 0 'CPU' 90"
+    search_string: "undervolt 0 'CPU' 0"
+
+- name: configure intel-undervolt GPU
+  lineinfile:
+    path: /etc/intel-undervolt.conf
+    line: "undervolt 0 'GPU' 90"
+    search_string: "undervolt 0 'GPU' 0"
+
+- name: configure intel-undervolt power package
+  lineinfile:
+    path: /etc/intel-undervolt.conf
+    line: "power package 5/5 2/30"
+    insert_after: "# Example: power package 45/0.002:disabled 35/28:enabled"
 
 - name: check if it is required to upgdate grub for GPD Win 2
   lineinfile:
