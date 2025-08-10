@@ -35,3 +35,4 @@
     - { role: acpi, tags: acpi }
     - { role: bluetooth, tags: bluetooth }
     - { role: gpdwin2, tags: gpdwin2, when: apply_gpdwin2_config }
+    - { role: kde-plasma, tags: kde-plasma }

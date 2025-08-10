@@ -1,0 +1,66 @@
+#SPDX-License-Identifier: MIT-0
+---
+
+- name: plasma - kdeglobals
+  become: true
+  become_user: '{{ user }}'
+  community.general.ini_file:
+    path: '/home/{{ user }}/.config/kdeglobals'
+    section: KDE
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+    no_extra_spaces: yes
+    mode: 0600
+  loop:
+  - option: AnimationDurationFactor
+    value: 0.125
+  - option: SingleClick
+    value: true
+
+- name: plasma - baloo
+  become: true
+  become_user: '{{ user }}'
+  community.general.ini_file:
+    path: '/home/{{ user }}/.config/baloofilerc'
+    section: Basic Settings
+    option: Indexing-Enabled
+    value: 'false'
+    no_extra_spaces: yes
+    mode: 0600
+
+- name: plasma - konsole
+  become: true
+  become_user: '{{ user }}'
+  community.general.ini_file:
+    path: '/home/{{ user }}/.config/konsolerc'
+    section: Desktop Entry
+    option: DefaultProfile
+    value: Fish.profile
+    no_extra_spaces: yes
+    mode: 0600
+
+- name: plasma - add konsole profile
+  become: true
+  become_user: '{{ user }}'
+  copy:
+    force: yes
+    dest: '/home/{{ user }}/.local/share/konsole/Fish.prosile'
+    content: |
+      [Appearance]
+      Font=0xProto Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+
+      [General]
+      Command=/usr/bin/fish
+      Name=Fish
+      Parent=FALLBACK/
+
+- name: plasma - krunner
+  become: true
+  become_user: '{{ user }}'
+  community.general.ini_file:
+    path: '/home/{{ user }}/.config/krunnerrc'
+    section: Plugins
+    option: baloosearchEnabled
+    value: Fish.profile
+    no_extra_spaces: false
+    mode: 0600
