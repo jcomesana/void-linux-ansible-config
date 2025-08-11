@@ -64,3 +64,35 @@
     value: false
     no_extra_spaces: false
     mode: 0600
+
+- name: plasma - plasmashellrc
+  become: true
+  become_user: '{{ user }}'
+  community.general.ini_file:
+    path: '{{ home_path }}/.config/plasmashellrc'
+    section: 'PlasmaViews][Panel 2'
+    no_extra_spaces: false
+    mode: 0600
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+  loop:
+  - option: floating
+    value: 0
+  - option: panelOpacity
+    value: 1
+
+- name: plasma - plasma-org.kde.plasma.desktop-appletsrc
+  become: true
+  become_user: '{{ user }}'
+  community.general.ini_file:
+    path: '{{ home_path }}/.config/plasma-org.kde.plasma.desktop-appletsrc'
+    section: 'Containments][2][Applets][18][Configuration][Appearance'
+    no_extra_spaces: false
+    mode: 0600
+    option: '{{ item.option }}'
+    value: '{{ item.value }}'
+  loop:
+  - option: dateFormat
+    value: isoDate
+  - option: use24hFormat
+    value: 2
