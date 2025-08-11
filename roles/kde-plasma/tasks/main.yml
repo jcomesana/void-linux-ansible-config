@@ -44,7 +44,7 @@
   become_user: '{{ user }}'
   copy:
     force: yes
-    dest: '/home/{{ user }}/.local/share/konsole/Fish.prosile'
+    dest: '/home/{{ user }}/.local/share/konsole/Fish.profile'
     content: |
       [Appearance]
       Font=0xProto Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
@@ -61,6 +61,6 @@
     path: '/home/{{ user }}/.config/krunnerrc'
     section: Plugins
     option: baloosearchEnabled
-    value: Fish.profile
+    value: false
     no_extra_spaces: false
     mode: 0600
