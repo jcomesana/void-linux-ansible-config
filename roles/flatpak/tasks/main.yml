@@ -24,7 +24,7 @@
     method: user
   loop:
     - rocks.koreader.KOReader
-    - io.github.flattool.Warehouse
+#    - io.github.flattool.Warehouse
     - com.vysp3r.ProtonPlus
     - com.heroicgameslauncher.hgl
     - it.mijorus.gearlever
