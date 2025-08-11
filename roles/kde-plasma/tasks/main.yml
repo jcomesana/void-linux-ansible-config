@@ -5,7 +5,7 @@
   become: true
   become_user: '{{ user }}'
   community.general.ini_file:
-    path: '/home/{{ user }}/.config/kdeglobals'
+    path: '{{ home_path }}/.config/kdeglobals'
     section: KDE
     option: '{{ item.option }}'
     value: '{{ item.value }}'
@@ -21,7 +21,7 @@
   become: true
   become_user: '{{ user }}'
   community.general.ini_file:
-    path: '/home/{{ user }}/.config/baloofilerc'
+    path: '{{ home_path }}/.config/baloofilerc'
     section: Basic Settings
     option: Indexing-Enabled
     value: 'false'
@@ -32,7 +32,7 @@
   become: true
   become_user: '{{ user }}'
   community.general.ini_file:
-    path: '/home/{{ user }}/.config/konsolerc'
+    path: '{{ home_path }}/.config/konsolerc'
     section: Desktop Entry
     option: DefaultProfile
     value: Fish.profile
@@ -44,7 +44,7 @@
   become_user: '{{ user }}'
   copy:
     force: yes
-    dest: '/home/{{ user }}/.local/share/konsole/Fish.profile'
+    dest: '{{ home_path }}/.local/share/konsole/Fish.profile'
     content: |
       [Appearance]
       Font=0xProto Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
@@ -58,7 +58,7 @@
   become: true
   become_user: '{{ user }}'
   community.general.ini_file:
-    path: '/home/{{ user }}/.config/krunnerrc'
+    path: '{{ home_path }}/.config/krunnerrc'
     section: Plugins
     option: baloosearchEnabled
     value: false
