@@ -22,6 +22,12 @@
     line: "power package 5/5 2/30"
     insert_after: "# Example: power package 45/0.002:disabled 35/28:enabled"
 
+- name: configure intel-undervolt init
+  blockinfile:
+    path: /etc/rc.local
+    block: |
+      intel-undervolt apply --trigger
+
 - name: check if it is required to upgdate grub for GPD Win 2
   lineinfile:
     backup: true
