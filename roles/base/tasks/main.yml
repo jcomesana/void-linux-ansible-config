@@ -124,3 +124,8 @@
     marker: "### EDITOR ###"
     insertbefore: "#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!"
     block: "export EDITOR=nvim"
+
+- name: install getnf
+  become: true
+  become_user: '{{ user }}'
+  shell: 'curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash'

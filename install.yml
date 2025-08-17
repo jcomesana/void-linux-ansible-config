@@ -10,6 +10,8 @@
     install_flatpaks: false
     install_virtualization: false
     install_containers: false
+    install_kde_apps: false
+    install_xfce_apps: false
 
   pre_tasks:
     - name: Upgrade xbps

@@ -35,16 +35,48 @@
     - mpv # video player
     - vlc # video player
     - youtube-dl
+    - strawberry # audio player
+    - milkytracker # fast tracker clone
+    - keepassxc # password manager
+
+- name: install kde applications
+  community.general.xbps:
+    name: '{{ item }}'
+    update_cache: false
+  when: install_kde_apps
+  loop:
     - ark # KDE archiver
     - okular # pdf editor, no img
     - spectacle # screenshots utility
     - nomacs # image viewer
     - filelight # disk usage analyzer
-    - strawberry # audio player
-    - milkytracker # fast tracker clone
-    - keepassxc # password manager
     - plasma-firewall # ufw gui
     - kdiff3 # compare files and directories
+
+- name: install xfce applications
+  community.general.xbps:
+    name: '{{ item }}'
+    update_cache: false
+  when: install_xfce_apps
+  loop:
+    - xfce4-appfinder
+    - xfce4-battery-plugin
+    - xfce4-cpufreq-plugin
+    - xfce4-cpugraph-plugin
+    - xfce4-docklike-plugin
+    - xfce4-genmon-plugin
+    - xfce4-places-plugin
+    - xfce4-power-manager
+    - xfce4-sensors-plugin
+    - xfce4-screenshooter
+    - xfce4-session
+    - xfce4-systemload-plugin
+    - xfce4-timer-plugin
+    - xfce4-whiskermenu-plugin
+    - xfwm4-themes
+    - albatross-themes
+    - bluebird-themes
+    - blackbird-themes
 
 - name: install power-profiles-daemon
   community.general.xbps:
