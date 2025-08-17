@@ -31,6 +31,7 @@
     - gst-plugins-ugly1
     - gst-plugins-rs1
     # Graphical apps
+    - gearlever # to handle appimages
     - mpv # video player
     - vlc # video player
     - youtube-dl
@@ -51,8 +52,20 @@
     update_cache: false
   notify: restart power-profiles-daemon
 
-- name: install onedrive gui
+- name: download OneDrive GUI AppImage
   get_url:
     url: https://github.com/bpozdena/OneDriveGUI/releases/download/v1.2.1/OneDriveGUI-1.2.1-x86_64.AppImage
+    dest: '/home/{{ user }}/Downloads'
+    mode: 0755
+
+- name: download KOReader AppImage
+  get_url:
+    url: https://github.com/koreader/koreader/releases/download/v2025.08/koreader-appimage-x86_64-linux-gnu-v2025.08.AppImage
+    dest: '/home/{{ user }}/Downloads'
+    mode: 0755
+
+- name: download Heroic Games Launcher AppImage
+  get_url:
+    url: https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.18.1/Heroic-2.18.1-linux-x86_64.AppImage
     dest: '/home/{{ user }}/Downloads'
     mode: 0755

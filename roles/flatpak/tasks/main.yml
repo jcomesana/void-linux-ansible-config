@@ -27,7 +27,7 @@
 #    - io.github.flattool.Warehouse
     - com.vysp3r.ProtonPlus
     - com.heroicgameslauncher.hgl
-    - it.mijorus.gearlever
+    # - it.mijorus.gearlever
     - org.dupot.easyflatpak
     - com.github.tchx84.Flatseal
     - org.fedoraproject.MediaWriter
