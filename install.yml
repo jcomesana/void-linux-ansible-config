@@ -4,8 +4,12 @@
   vars:
     user: user
     shell: /usr/bin/zsh
-    apply_gpdwin2_config: false
     home_path: '/home/{{ user }}'
+    apply_gpdwin2_config: false
+    apply_kde_config: false
+    install_flatpaks: false
+    install_virtualization: false
+    install_containers: false
 
   pre_tasks:
     - name: Upgrade xbps
@@ -27,13 +31,13 @@
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
     - { role: development, tags: development }
-    - { role: flatpak, tags: flatpak }
+    - { role: flatpak, tags: flatpak, when: install_flatpaks }
     - { role: runit, tags: runit }
     - { role: power, tags: power }
-    - { role: virtualization, tags: virtualization }
-    - { role: containers, tags: containers }
+    - { role: virtualization, tags: virtualization, when: install_virtualization }
+    - { role: containers, tags: containers, when: install_containers }
     - { role: zram, tags: zram }
     - { role: acpi, tags: acpi }
     - { role: bluetooth, tags: bluetooth }
     - { role: gpdwin2, tags: gpdwin2, when: apply_gpdwin2_config }
-    - { role: kde-plasma, tags: kde-plasma }
+    - { role: kde-plasma, tags: kde-plasma, when: apply_kde_config  }
