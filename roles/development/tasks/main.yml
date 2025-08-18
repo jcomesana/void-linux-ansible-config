@@ -22,6 +22,8 @@
     - automake
     - heaptrack
     - hotspot
+    - cpp-utilities
+    - cppcheck
     # Python
     - uv
     - python3-pip
