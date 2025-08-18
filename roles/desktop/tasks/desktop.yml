@@ -5,10 +5,6 @@
     update_cache: false
   loop:
     # DE
-    - wl-clipboard # clipboard manager
-    - kdesu
-    - kdegraphics-thumbnailers
-    - ffmpegthumbs
     - noto-fonts-ttf # unicode font
     - noto-fonts-emoji # emojis
     - dejavu-fonts-ttf # fonts
@@ -45,6 +41,10 @@
     update_cache: false
   when: install_kde_apps
   loop:
+    - wl-clipboard # clipboard manager
+    - kdesu
+    - kdegraphics-thumbnailers
+    - ffmpegthumbs
     - ark # KDE archiver
     - okular # pdf editor, no img
     - spectacle # screenshots utility
@@ -59,6 +59,7 @@
     update_cache: false
   when: install_xfce_apps
   loop:
+    - xsel
     - xfce4-appfinder
     - xfce4-battery-plugin
     - xfce4-cpufreq-plugin
