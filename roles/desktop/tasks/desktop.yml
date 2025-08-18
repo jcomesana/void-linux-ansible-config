@@ -77,7 +77,7 @@
     - xfwm4-themes
     - albatross-themes
     - bluebird-themes
-    - blackbird-themes
+    - gnome-icon-theme-xfce
 
 - name: install power-profiles-daemon
   community.general.xbps:
