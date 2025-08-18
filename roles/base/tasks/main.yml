@@ -110,21 +110,6 @@
     line: '%wheel ALL=(ALL:ALL) NOPASSWD: ALL'
     validate: /usr/sbin/visudo -cf %s
 
-- name: configure EDITOR in fish
-  become: true
-  become_user: '{{ user }}'
-  shell: >
-    fish -c "set -U EDITOR nvim"
-
-- name: configure EDITOR in zsh
-  become: true
-  become_user: '{{ user }}'
-  ansible.builtin.blockinfile:
-    path: ~/.zshrc
-    marker: "### EDITOR ###"
-    insertbefore: "#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!"
-    block: "export EDITOR=nvim"
-
 - name: install getnf
   become: true
   become_user: '{{ user }}'
