@@ -114,7 +114,7 @@
   become: true
   become_user: '{{ user }}'
   shell: >
-    fish -c "set -U EDITOR nvim
+    fish -c "set -U EDITOR nvim"
 
 - name: configure EDITOR in zsh
   become: true
