@@ -114,3 +114,8 @@
   become: true
   become_user: '{{ user }}'
   shell: 'curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash'
+
+- name: install 0xProto
+  become: true
+  become_user: '{{ user }}'
+  shell: '/home/{{ user }}/.local/bin/getnf -i 0xProto'
