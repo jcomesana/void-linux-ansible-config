@@ -84,6 +84,9 @@
     - pv # progress bar
     - lzop # compression tool
     - hyperfine # like time
+    # Firmware
+    - linux-firmware
+    - sof-firmware
 
 - name: Configure root
   user:
